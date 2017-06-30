@@ -1,0 +1,29 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--1-col">1</div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <h3>Ejemplo 1</h3>
+    <button (click)="onClickMe()">Click me!</button>
+    {{clickMessage}}
+    <h3>Ejemplo 2</h3>
+    <h4>A</h4>
+    <input (keyup)="onKeyA($event)">
+    <p>{{valuesA}}</p>
+    <h4>B</h4>
+    <input (keyup)="onKeyB($event)">
+    <p>{{valuesB}}</p>
+    <h4>C</h4>
+    <input (keyup)="onKeyC($event)">
+    <p>{{valuesC}}</p>
+    <h3>Ejemplo 3</h3>
+    <input #box (keyup)="0">
+    <p>{{box.value}}</p>
+    <h3>Ejemplo 4</h3>
+    <input #boxD (keyup)="onKeyD(boxD.value)">
+    <p>{{valuesD}}</p>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col">
+
+  </div>
+  <div class="mdl-cell mdl-cell--1-col">1</div>
+  <div class="mdl-cell mdl-cell--1-col">1</div>
+</div>

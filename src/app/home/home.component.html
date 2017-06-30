@@ -1,72 +1,18 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
-            mdl-layout--fixed-tabs">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Dashboard</span>
-      <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <form action="#">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="sample6">
-              <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-            </div>
-          </div>
-        </form>
-        <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">shopping_cart</div>
-      </nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products_API">
+      <div class="row">
+        <div class="col-md-6">
+          <a  href="#" class="thumbnail">
+              <img [src]="product.image_thumb_url">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h2>{{product.name}}</h2>
+          <p>$ {{product.price_in_cents}}</p>
+          <button class="btn btn-success btn-sm pull-xs-right" (click)="addProductToCart(product)">Add To Cart</button>
+        </div>
+      </div>      
     </div>
-    <!-- Tabs -->
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Tab 1</a>
-      <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>
-      <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
   </div>
-  <main class="mdl-layout__content">
-    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-      <div class="page-content">
-        <div class="mdl-grid">
-          <div *ngFor="let product of products | async" class="mdl-cell mdl-cell--3-col">
-            <div class="demo-card-event mdl-card mdl-shadow--2dp">
-              <div class="mdl-card__title mdl-card--expand">
-                <h4>
-                  {{product.title}}:<br>
-                  Lata, 350 ml<br>
-                  $2.500
-                </h4>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"  (click)="removeProduct(product)">
-                  Agregar al Carrito
-                </a>
-                <div class="mdl-layout-spacer"></div>
-                <i class="material-icons">event</i>
-              </div>
-            </div>
-          </div>
-        </div>          
-      </div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-      <div class="page-content">
-        <div class="container">
-            <h1>Agregar Producto</h1>
-            <form #productForm="ngForm" (ngSubmit)="onSubmit()">
-
-            </form>
-        </div>    
-      </div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-  </main>
 </div>
