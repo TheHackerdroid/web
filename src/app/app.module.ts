@@ -33,6 +33,7 @@ const appRoutes: Routes = [
   { path: '',         component: HomeComponent, canActivate: [StoreFirstGuard] },
   { path: 'cart',     component: CartDetailComponent, canActivate: [StoreFirstGuard] },
   { path: 'checkout', component: CheckoutComponent,canActivate: [StoreFirstGuard] },
+  { path: 'formulario',    component: FormsComponent },
   { path: 'admin',    component: AdminComponent },
   { path: 'admin/products', component: ProductsComponent },
   { path: 'admin/products/new', component: ProductsComponent },
