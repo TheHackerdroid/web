@@ -8,8 +8,7 @@
       (ngSubmit)="submitOrder(form)" class="m-a-1">
     <div class="form-group">
         <label>Name</label>
-        <input class="form-control" #name="ngModel" name="name" 
-               [(ngModel)]="order.name" required />
+        <input class="form-control" #name="ngModel" name="name" [(ngModel)]="order.name" required />
         <span  *ngIf="submitted && name.invalid" class="text-danger">
             Please enter your name
         </span>
